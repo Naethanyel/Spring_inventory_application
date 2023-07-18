@@ -37,3 +37,8 @@ In validators folder, created MaxpartsValidator, MinPartsValidator, ValidMaxPart
 
 Prompt I:
 PartTest.java, lines 104 to 120, added unit test for setMin and unit test for setMax
+
+Prompt J:
+in validators folder, deleted EnufPartsValidator.java and ValidEnufParts.java
+Product.java, line 3, delete import for ValidEnufParts
+Product.java, line 21, deleted annotation for @ValidEnufParts
