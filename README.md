@@ -13,9 +13,16 @@ Prompt E:
 BootStrapData.java, lines 64-109, create sample inventory
 BootStrapData.java, line 64, confirms sample data only created when both lists are empty
 
-Prompt D:
+Prompt F:
 mainscreen.html, line 100, added product buy now button
 AddProductController.java, lines 125-138, added code to buy product
 AddProductController.java, line 131, decrement inventory by 1
 AddProductController.java, line 134 to 136, inform buyer if they bought the product or not
 in templates folder, added confirmationbuypart.html and failbuypart.html
+
+Prompt G:
+Part.java, lines 30 to 57, added min and max attributes
+Part.java, lines 87 to 99, added getters and setters for min and max
+BootStrapData.java, lines 87 to 112, added min and max inventory to sample parts
+InhousePartForm.html, lines 26 to 27, added min and max inputs
+OutsourcedPartForm.html, lines 26 to 27, added min and max inputs
