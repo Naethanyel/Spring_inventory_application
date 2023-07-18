@@ -4,6 +4,7 @@ import com.example.demo.validators.ValidDeletePart;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Max;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,6 +31,11 @@ public abstract class Part implements Serializable {
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
 
+    @Min(value = 0, message = "Minimum value must be positive")
+    int min;
+    @Max(value = 10, message = "Maximum value must less than 10")
+    int max;
+
     @ManyToMany
 
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -39,19 +45,21 @@ public abstract class Part implements Serializable {
     public Part() {
     }
 
-    public Part(String name, double price, int inv/*, int minimum, int maximum*/) {
+    public Part(String name, double price, int inv, int min, int max) {
         this.name = name;
         this.price = price;
         this.inv = inv;
-        // this.minimum = minimum;
-        // this.maximum = maximum;
+        this.min = min;
+        this.max = max;
     }
 
-    public Part(long id, String name, double price, int inv) {
+    public Part(long id, String name, double price, int inv, int min, int max) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.min = min;
+        this.max= max;
     }
 
     public long getId() {
@@ -82,21 +90,21 @@ public abstract class Part implements Serializable {
         return inv;
     }
 
-    /* public void setMin(int minimum) {
-        this.minimum= minimum;
+    public void setMin(int min) {
+        this.min= min;
     }
 
     public int getMin() {
-        return minimum;
+        return min;
     }
 
-    public void setMax(int maximum) {
-        this.maximum = maximum;
+    public void setMax(int max) {
+        this.max = max;
     }
 
     public int getMax() {
-        return maximum;
-    }*/
+        return max;
+    }
 
     public void setInv(int inv) {
         this.inv = inv;

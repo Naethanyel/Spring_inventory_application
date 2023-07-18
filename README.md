@@ -21,8 +21,16 @@ AddProductController.java, line 134 to 136, inform buyer if they bought the prod
 in templates folder, added confirmationbuypart.html and failbuypart.html
 
 Prompt G:
-Part.java, lines 30 to 57, added min and max attributes
-Part.java, lines 87 to 99, added getters and setters for min and max
-BootStrapData.java, lines 87 to 112, added min and max inventory to sample parts
+Part.java, lines 33, 34, 45 to 60, added min and max attributes
+Part.java, lines 90 to 104, added getters and setters for min and max
+BootStrapData.java, lines 87 to 112, set min and max inventory to sample parts
 InhousePartForm.html, lines 26 to 27, added min and max inputs
 OutsourcedPartForm.html, lines 26 to 27, added min and max inputs
+mainscreen.html, lines 47,48,57,58, added min max fields to table
+application.properties, line 6, renamed database (added a "3" on the end)
+
+Prompt H and Prompt G step 5:
+part.java, lines 29, 31, 34, 36, added @Max and @Min annotations
+InhousePartForm.html, lines 27, 29, added error checking for min and max
+OutsourcedPartForm.html, lines 28, 30, added error checking for min and max
+In validators folder, created MaxpartsValidator, MinPartsValidator, ValidMaxParts, and ValidMinParts

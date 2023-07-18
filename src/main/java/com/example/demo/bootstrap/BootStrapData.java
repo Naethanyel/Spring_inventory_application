@@ -84,32 +84,32 @@ public class BootStrapData implements CommandLineRunner {
             hood.setName("Ferrari hood");
             hood.setInv(1);
             hood.setPrice(2000.00);
-            //hood.setMin(1);
-            //hood.setMax(10);
+            hood.setMin(0);
+            hood.setMax(10);
 
             spoiler.setName("Mustang Spoiler");
             spoiler.setInv(5);
             spoiler.setPrice(800.00);
-            //spoiler.setMin(1);
-            //spoiler.setMax(10);
+            spoiler.setMin(0);
+            spoiler.setMax(10);
 
             muffler.setName("Aston Martin Muffler");
             muffler.setInv(2);
             muffler.setPrice(4000.00);
-            //muffler.setMin(1);
-            //muffler.setMax(10);
+            muffler.setMin(0);
+            muffler.setMax(10);
 
             ornament.setName("Rolls Royce Hood Ornament");
             ornament.setInv(4);
             ornament.setPrice(800.00);
-            //ornament.setMin(1);
-            //ornament.setMax(10);
+            ornament.setMin(0);
+            ornament.setMax(10);
 
             wheel.setName("Corvette Steering Wheel");
             wheel.setInv(3);
             wheel.setPrice(600.00);
-            //wheel.setMin(1);
-            //wheel.setMax(10);
+            wheel.setMin(0);
+            wheel.setMax(10);
 
             partRepository.save(hood);
             partRepository.save(muffler);
