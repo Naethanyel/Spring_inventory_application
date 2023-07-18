@@ -1,5 +1,6 @@
 package com.example.demo.bootstrap;
 
+import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
@@ -60,12 +61,52 @@ public class BootStrapData implements CommandLineRunner {
             System.out.println(part.getName()+" "+part.getCompanyName());
         }
 
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
+        if (productRepository.count() + partRepository.count() < 1) {
+
+            Product aston_martin = new Product("aston martin", 400000.0, 2);
+            Product mustang = new Product("mustang", 60000.0, 3);
+            Product ferrari = new Product("ferrari", 100000.0, 1);
+            Product corvette = new Product("corvette", 76000.0, 2);
+            Product rolls_royce = new Product("rolls royce", 240000.0, 4);
+
+            productRepository.save(aston_martin);
+            productRepository.save(mustang);
+            productRepository.save(ferrari);
+            productRepository.save(corvette);
+            productRepository.save(rolls_royce);
+
+            InhousePart hood = new InhousePart();
+            InhousePart spoiler = new InhousePart();
+            InhousePart wheel = new InhousePart();
+            InhousePart ornament = new InhousePart();
+            InhousePart muffler = new InhousePart();
+
+            hood.setName("Ferrari hood");
+            hood.setInv(1);
+            hood.setPrice(2000.00);
+
+            spoiler.setName("Mustang Spoiler");
+            spoiler.setInv(5);
+            spoiler.setPrice(800.00);
+
+            muffler.setName("Aston Martin Muffler");
+            muffler.setInv(2);
+            muffler.setPrice(4000.00);
+
+            ornament.setName("Rolls Royce Hood Ornament");
+            ornament.setInv(4);
+            ornament.setPrice(800.00);
+
+            wheel.setName("Corvette Steering Wheel");
+            wheel.setInv(3);
+            wheel.setPrice(600.00);
+
+            partRepository.save(hood);
+            partRepository.save(muffler);
+            partRepository.save(ornament);
+            partRepository.save(wheel);
+            partRepository.save(spoiler);
+        }
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
