@@ -12,3 +12,10 @@ about.html, line 7, created a link to homepage
 Prompt E:
 BootStrapData.java, lines 64-109, create sample inventory
 BootStrapData.java, line 64, confirms sample data only created when both lists are empty
+
+Prompt D:
+mainscreen.html, line 100, added product buy now button
+AddProductController.java, lines 125-138, added code to buy product
+AddProductController.java, line 131, decrement inventory by 1
+AddProductController.java, line 134 to 136, inform buyer if they bought the product or not
+in templates folder, added confirmationbuypart.html and failbuypart.html
