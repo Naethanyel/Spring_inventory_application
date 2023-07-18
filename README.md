@@ -34,3 +34,6 @@ part.java, lines 29, 31, 34, 36, added @Max and @Min annotations
 InhousePartForm.html, lines 27, 29, added error checking for min and max
 OutsourcedPartForm.html, lines 28, 30, added error checking for min and max
 In validators folder, created MaxpartsValidator, MinPartsValidator, ValidMaxParts, and ValidMinParts
+
+Prompt I:
+PartTest.java, lines 104 to 120, added unit test for setMin and unit test for setMax
