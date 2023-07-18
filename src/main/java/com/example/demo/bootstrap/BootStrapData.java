@@ -55,7 +55,7 @@ public class BootStrapData implements CommandLineRunner {
         }
 
         System.out.println(thePart.getCompanyName());
-        */
+        njhbhjb*/
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
