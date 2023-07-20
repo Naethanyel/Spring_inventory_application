@@ -19,6 +19,9 @@ AddProductController.java, lines 125-138, added code to buy product
 AddProductController.java, line 131, decrement inventory by 1
 AddProductController.java, line 134 to 136, inform buyer if they bought the product or not
 in templates folder, added confirmationbuypart.html and failbuypart.html
+REVISION: updated failbuypart.html and confirmbuypart.html, lines 5-7 and 11, 
+"buy now" button now auto directs to mainscreen page with inventory correctly decremented
+and alerts user of success/failure.
 
 Prompt G:
 Part.java, lines 33, 34, 45 to 60, added min and max attributes
