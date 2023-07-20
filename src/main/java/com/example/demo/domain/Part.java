@@ -1,6 +1,7 @@
 package com.example.demo.domain;
 
-import com.example.demo.validators.ValidDeletePart;
+//import com.example.demo.validators.ValidDeletePart;
+import com.example.demo.validators.ValidMinParts;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -16,7 +17,7 @@ import java.util.Set;
  *
  */
 @Entity
-@ValidDeletePart
+@ValidMinParts
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
@@ -32,8 +33,7 @@ public abstract class Part implements Serializable {
     int inv;
 
     @Min(value = 0, message = "Minimum value must be positive")
-    int min;
-    @Max(value = 10, message = "Maximum value must less than 10")
+    int minimum;
     int max;
 
     @ManyToMany
@@ -45,11 +45,11 @@ public abstract class Part implements Serializable {
     public Part() {
     }
 
-    public Part(String name, double price, int inv, int min, int max) {
+    public Part(String name, double price, int inv, int minimum, int max) {
         this.name = name;
         this.price = price;
         this.inv = inv;
-        this.min = min;
+        this.minimum = minimum;
         this.max = max;
     }
 
@@ -58,7 +58,7 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
-        this.min = min;
+        this.minimum = min;
         this.max= max;
     }
 
@@ -91,11 +91,11 @@ public abstract class Part implements Serializable {
     }
 
     public void setMin(int min) {
-        this.min= min;
+        this.minimum= min;
     }
 
     public int getMin() {
-        return min;
+        return minimum;
     }
 
     public void setMax(int max) {

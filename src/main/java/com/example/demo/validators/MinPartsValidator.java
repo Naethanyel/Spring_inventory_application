@@ -1,9 +1,6 @@
 package com.example.demo.validators;
 
 import com.example.demo.domain.Part;
-import com.example.demo.domain.Product;
-import com.example.demo.service.ProductService;
-import com.example.demo.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
@@ -16,7 +13,7 @@ import javax.validation.ConstraintValidatorContext;
  *
  *
  */
-public class MinPartsValidator implements ConstraintValidator<ValidMinParts, Product> {
+public class MinPartsValidator implements ConstraintValidator<ValidMinParts, Part> {
     @Autowired
     private ApplicationContext context;
     public static  ApplicationContext myContext;
@@ -26,19 +23,15 @@ public class MinPartsValidator implements ConstraintValidator<ValidMinParts, Pro
     }
 
     @Override
-    public boolean isValid(Product product, ConstraintValidatorContext constraintValidatorContext) {
-        if(context==null) return true;
-        if(context!=null)myContext=context;
-        ProductService repo = myContext.getBean(ProductServiceImpl.class);
-        if (product.getId() != 0) {
-            Product myProduct = repo.findById((int) product.getId());
-            for (Part p : myProduct.getParts()) {
-                if (p.getInv()<(product.getInv()-myProduct.getInv()))return false;
-            }
-            return true;
+    public boolean isValid(Part part, ConstraintValidatorContext constraintValidatorContext) {
+        if (context == null) return true;
+        if (context != null) myContext = context;
+        if (part.getInv() < part.getMin() || part.getInv() > part.getMax()
+                || part.getMin() > part.getMax()) {
+            System.out.println("Fail");
+            return false;
         }
-        else{
-            return true;
-        }
+        System.out.println("Pass");
+        return true;
     }
 }

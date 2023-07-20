@@ -14,10 +14,10 @@ import java.lang.annotation.Target;
  *
  */
 @Constraint(validatedBy = {MinPartsValidator.class})
-@Target({ElementType.TYPE})
+@Target({ElementType.FIELD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidMinParts {
-    String message() default "There need to be at least 0 parts in inventory!";
+    String message() default "Minimum needs to be less than maximum, and inventory. Inventory needs to be less than max";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
 

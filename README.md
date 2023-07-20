@@ -31,6 +31,10 @@ InhousePartForm.html, lines 26 to 27, added min and max inputs
 OutsourcedPartForm.html, lines 26 to 27, added min and max inputs
 mainscreen.html, lines 47,48,57,58, added min max fields to table
 application.properties, line 6, renamed database (added a "3" on the end)
+REVISION: Updated Part.java, line 20, added hook annotation to MinPartsValidator.java
+In MinPartsValidator.java, lines 27-35, added code to enforce that the inventory 
+is between or at the minimum and maximum value
+
 
 Prompt H and Prompt G step 5:
 part.java, lines 29, 31, 34, 36, added @Max and @Min annotations
