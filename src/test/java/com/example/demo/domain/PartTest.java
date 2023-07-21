@@ -103,7 +103,7 @@ class PartTest {
 
     @Test
     void setMin() {
-        int min=1;
+        int min=5;
         partIn.setMin(min);
         assertEquals(min,partIn.getMin());
         partOut.setInv(min);
@@ -111,12 +111,12 @@ class PartTest {
     }
 
     @Test
-    void setMax() {
-        int max=10;
-        partIn.setMax(max);
-        assertEquals(max,partIn.getMax());
-        partOut.setInv(max);
-        assertEquals(max,partOut.getMax());
+    void getMin() {
+        int min=5;
+        partIn.setMin(min);
+        assertEquals(min,partIn.getMax());
+        partOut.setInv(min);
+        assertEquals(min,partOut.getMax());
     }
 
     @Test
