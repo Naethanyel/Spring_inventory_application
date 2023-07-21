@@ -27,6 +27,11 @@
     <p th:if="${#fields.hasErrors('min')}" th:errors="*{min}">Min quantity Error</p>
     <p><input type="text" th:field="*{max}" placeholder="Maximum" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('max')}" th:errors="*{max}">Min quantity Error</p>
+    <div th:if="${#fields.hasAnyErrors()}">
+        <ul>
+            <li th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+        </ul>
+    </div>
 
 <p><input type="submit" value="Submit" /></p>
 </form>

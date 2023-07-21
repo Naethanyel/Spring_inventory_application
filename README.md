@@ -36,11 +36,15 @@ In MinPartsValidator.java, lines 27-35, added code to enforce that the inventory
 is between or at the minimum and maximum value
 
 
-Prompt H and Prompt G step 5:
+Prompt H
 part.java, lines 29, 31, 34, 36, added @Max and @Min annotations
 InhousePartForm.html, lines 27, 29, added error checking for min and max
 OutsourcedPartForm.html, lines 28, 30, added error checking for min and max
 In validators folder, created MaxpartsValidator, MinPartsValidator, ValidMaxParts, and ValidMinParts
+REVISION: Updated error message in ValidMinParts.java lines 20-22.
+Added error messages in lines 30-35 of InhousePartForm.html and OutsourcedPartForm.html,
+errors now displayed to user.
+Deleted unused MaxPartsValidator and its dependencies.
 
 Prompt I:
 PartTest.java, lines 104 to 120, added unit test for setMin and unit test for setMax
@@ -50,4 +54,4 @@ in validators folder, deleted EnufPartsValidator.java and ValidEnufParts.java
 Product.java, line 3, delete import for ValidEnufParts
 Product.java, line 21, deleted annotation for @ValidEnufParts
 REVISION: Confirmed that DeletePartValidator.java class was not used. Deleted DeletePartValidator.java
-and ValidDeletePart.java,
+and ValidDeletePart.java and their dependencies.

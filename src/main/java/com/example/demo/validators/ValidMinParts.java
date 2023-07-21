@@ -17,7 +17,9 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidMinParts {
-    String message() default "Minimum needs to be less than maximum, and inventory. Inventory needs to be less than max";
+    String message() default "Minimum needs to be less than maximum. \n" +
+            "Current inventory need to be more than minimum. \n" +
+            "Maximum needs to be more than current inventory";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
 

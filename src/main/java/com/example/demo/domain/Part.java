@@ -1,11 +1,9 @@
 package com.example.demo.domain;
 
-//import com.example.demo.validators.ValidDeletePart;
 import com.example.demo.validators.ValidMinParts;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Max;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
