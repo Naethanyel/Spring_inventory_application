@@ -51,6 +51,7 @@ Deleted unused MaxPartsValidator and its dependencies.
 Prompt I:
 PartTest.java, lines 104 to 120, added unit test for setMin and unit test for setMax.
 REVISION: Rebuilt tests in PartTest.java, lines 86-102, confirmed tests pass.
+REVISION 2: Fixed tests, lines 104 to 119. Added tests for "max", lines 122 to 138.
 
 Prompt J:
 in validators folder, deleted EnufPartsValidator.java and ValidEnufParts.java.
